@@ -7,6 +7,7 @@ import 'package:smartvac/screens/homes/history.dart';
 import 'package:smartvac/screens/puchase.dart';
 
 import '../splash.dart';
+import '../update.dart';
 
 Widget draw(BuildContext context,GlobalKey<ScaffoldState> key){
   return Padding(
@@ -30,7 +31,9 @@ Widget draw(BuildContext context,GlobalKey<ScaffoldState> key){
         ),
         SizedBox(height: 14,),
         GestureDetector(
-         onTap: (){},
+         onTap: (){
+           Navigator.push(context, CupertinoPageRoute(builder: (context)=>Update()));
+         },
          child: mtitle('Recent updates')
         ),
          SizedBox(height: 14,),

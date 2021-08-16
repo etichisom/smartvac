@@ -83,23 +83,24 @@ class _ChartState extends State<Chart> {
                          child:  SfCartesianChart(
                            plotAreaBorderWidth: 0,
                            series: <ChartSeries>[
-                             LineSeries<useage,double>(dataSource:data,
-                               xValueMapper: (useage use,_)=>use.date,
+                             ColumnSeries<useage,String>(
+                               dataSource:data,
+                               xValueMapper: (useage use,_)=>use.date.toString() + 'h'  ,
                                yValueMapper: (useage use,_)=>use.unit,
-                               markerSettings: const MarkerSettings(isVisible: true),
-                               dataLabelSettings: DataLabelSettings(isVisible: true)
+                               //width: 0.05,
+                      dataLabelSettings: const DataLabelSettings(
+                          isVisible: false, textStyle: TextStyle(fontSize: 10)),
                              ),
 
                            ],
                            tooltipBehavior: TooltipBehavior(enable: true),
-                           primaryXAxis: NumericAxis(
-                               majorGridLines: const MajorGridLines(width: 0),
-                             labelFormat: '{value}h',
+                           primaryXAxis: CategoryAxis(
+                             majorGridLines: const MajorGridLines(width: 0),
+
                            ),
                            primaryYAxis: NumericAxis(
                                axisLine: const AxisLine(width: 0),
-                               labelFormat: '{value}KWh',
-                               edgeLabelPlacement: EdgeLabelPlacement.shift,
+                               labelFormat: '{value}kw',
                                majorTickLines: const MajorTickLines(size: 0)),
                          ),
                        ),
@@ -129,17 +130,23 @@ class _ChartState extends State<Chart> {
        double dunit = element.sum.toDouble();
        var parsedDate = DateTime.parse(element.date);
        if(parsedDate.month == date.month && parsedDate.day ==date.day && parsedDate.year==date.year){
-         print(element.sum);
-         print(parsedDate.hour);
-         data.add(useage(element.sum.toDouble(), parsedDate.hour.toDouble()));
+         for(int i = 0 ; i <= 24;i++){
+           print(i);
+           if(parsedDate.hour == i){
+             data.add(useage(element.sum.toDouble(), i.toString()));
+           }else{
+             data.add(useage(0, i.toString()));
+           }
+         }
 
        }
 
      });
      if(data.length == 1){
-       data.add(useage(0, 0));
+
      }
-     print(data.length);
+
+
 
 
    }

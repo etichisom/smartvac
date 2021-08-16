@@ -79,7 +79,8 @@ Future<usermodel> login(String email ,String password,)async{
       return null;
     }
   }catch(e){
-    loader(context).pop();
+    print(e);
+    //loader(context).pop();
     dia(context,'','check internet connection').dialog();
   }
 

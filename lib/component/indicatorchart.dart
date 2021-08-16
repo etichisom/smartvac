@@ -34,19 +34,26 @@ Widget chart (Stream stream1){
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircularPercentIndicator(
-              radius: 190.0,
+              radius: 230.0,
               lineWidth: 28.0,
               animation: true,
               animationDuration: 1200,
-              percent:0,
+              percent:per(soc),
               progressColor:Color.fromRGBO(53,75, 133, 1),
               //p: Color.fromRGBO(53,75, 133, 1),
-              center: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              center: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(soc.units.usedUnit.toString(),style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 21),),
-                  Text('  out of \n  ${soc.units.totalUnit}',style: GoogleFonts.poppins(fontSize: 12)),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(soc.units.usedUnit.toString() + 'KW',style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 23),),
+                      Text('out of',style: GoogleFonts.poppins(fontSize: 12)),
+                    ],
+                  ),
+                  SizedBox(height: 3,),
+                  Text(soc.units.totalUnit.toString() + 'KW',style: GoogleFonts.poppins(fontSize: 15)),
                 ],
               ),
             ),

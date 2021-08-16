@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smartvac/screens/splash.dart';
@@ -15,7 +16,10 @@ void main() async {
         isInDebugMode: false,
     );
   }
-  runApp(MyApp());
+  runApp( DevicePreview(
+    enabled: false,
+    builder: (context) => MyApp(), // Wrap your app
+  ),);
 }
 
 class MyApp extends StatelessWidget {

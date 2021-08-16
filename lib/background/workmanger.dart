@@ -16,7 +16,7 @@ void callbackDispatcher(){
       Uri.parse('ws://smartvac-api.herokuapp.com/ws'),
     );
     FlutterLocalNotificationsPlugin flp = FlutterLocalNotificationsPlugin();
-    var android = AndroidInitializationSettings('@mipmap/ic_launcher');
+    var android = AndroidInitializationSettings('@mipmap/launcher_icon');
     var iOS = IOSInitializationSettings();
     var initSetttings = InitializationSettings(android: android,iOS: iOS);
     flp.initialize(initSetttings);

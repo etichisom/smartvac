@@ -28,8 +28,8 @@ class Data {
   String email;
   String password;
   int minUnit;
-  int usedUnit;
-  int totalUnit;
+  var usedUnit;
+  var totalUnit;
   Null currentReading;
   Null payment;
 

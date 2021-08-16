@@ -15,7 +15,7 @@ class _HomeState extends State<Bnav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:body[currentindex],
+      body:AnimatedSwitcher(duration: Duration(milliseconds:500),child: body[currentindex],),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentindex,
         onTap: (i){

@@ -6,19 +6,19 @@ final intro = [
   new PageModel(
       color: Color.fromRGBO(8,68,68, 1),
       imageAssetPath: 'assest/mb.png',
-      title: 'Lorem ipsum ',
+      title: 'Smartvac',
       body: 'Monitor your power usuage on a daily basis',
       doAnimateImage: true),
   new PageModel(
       color: Color.fromRGBO(32,122,122, 1) ,
       imageAssetPath: 'assest/mb.png',
-      title: 'Lorem ipsum ',
+      title: 'Smartvac ',
       body: 'Monitor your power usuage on a daily basis',
       doAnimateImage: true),
   new PageModel(
       color:  Color.fromRGBO(8,68,68, 1),
       imageAssetPath: 'assest/mb.png',
-      title: 'Lorem ipsum ',
+      title: 'Smartvac',
       body: 'Monitor your power usuage on a daily basis',
       doAnimateImage: true),
 ];

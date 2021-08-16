@@ -32,10 +32,12 @@ dependencies:
   provider: ^5.0.0
   web_socket_channel: ^2.1.0
   percent_indicator: ^3.0.1
-  syncfusion_flutter_charts: ^19.2.49
+  syncfusion_flutter_charts: ^19.2.44
   flutter_local_notifications:
   workmanager: ^0.3.0
   shared_preferences: ^2.0.6
+  device_preview: ^0.7.4
+
   flutter:
     sdk: flutter
 
@@ -45,9 +47,12 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  flutter_launcher_icons: "^0.9.1"
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assest/mb.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

@@ -14,7 +14,7 @@ Widget head(BuildContext context,Size size, GlobalKey<ScaffoldState> key){
           },
           child: Icon(Icons.menu_sharp,size: 24,)),
       SizedBox(width: 10,),
-      Text('Welcome back, ${ud.data.name}',style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500)),
+      Text('Welcome back, ${ud.data.name.toString()}',style: GoogleFonts.poppins(fontSize: 16,fontWeight: FontWeight.w500)),
       Expanded(child: Container()),
       GestureDetector(
           onTap: (){

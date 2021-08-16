@@ -21,7 +21,7 @@ Widget histile(Data m,Size size){
             children: [
               Text(m.units.toString() +' Units',style: GoogleFonts.roboto(fontSize: 17),),
               SizedBox(height: 3,),
-              FittedBox(child: Text(day(m),style: GoogleFonts.roboto(fontSize: 12,color: Colors.grey),)),
+              FittedBox(child: Text(day(m.day),style: GoogleFonts.roboto(fontSize: 12,color: Colors.grey),)),
             ],
           ),
           Expanded(child: Container()),
@@ -38,8 +38,8 @@ Widget histile(Data m,Size size){
   );
 }
 
-String day(Data m) {
-  DateTime date = DateTime.parse(m.day);
+String day(String m) {
+  DateTime date = DateTime.parse(m);
   return Jiffy({
     "year": date.year,
     "month": date.month,

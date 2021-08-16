@@ -26,7 +26,6 @@ class Payservice{
           'Content-Type': 'application/json; charset=UTF-8',
         },
         body: jsonEncode({
-          "day":"2021-06-26T20:42:31Z",
           "amount": amount.toInt(),
           "units": unit,
           "user_id": 1

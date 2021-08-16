@@ -21,8 +21,8 @@ class Data {
   String name;
   String email;
   int minUnit;
-  int usedUnit;
-  int totalUnit;
+  var usedUnit;
+  var totalUnit;
 
   Data(
       {this.id,

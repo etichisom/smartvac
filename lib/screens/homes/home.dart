@@ -41,20 +41,20 @@ class _HomeState extends State<Home> {
         child:ud==null?Center(child: CircularProgressIndicator()):Column(
           children: [
             head(context,size,key),
+            SizedBox(height: 10,),
             Expanded(
               child: Container(
                 child: ListView(
                   physics: BouncingScrollPhysics(),
                   children: [
                     SizedBox(height: 20,),
-                    SizedBox(height: 10,),
                     Row(
                       children: [
                         stitle('Usage summary'),
                         Expanded(child: Container()),
-                        Chip(label:wtitle('7 days'),backgroundColor: Color.fromRGBO(87, 128, 128, 1),),
-                        SizedBox(width: 15,),
-                        stitle('30 days Custom' )
+                       // Chip(label:wtitle('7 days'),backgroundColor: Color.fromRGBO(87, 128, 128, 1),),
+                       // SizedBox(width: 15,),
+                        //stitle('30 days Custom' )
                       ],
                     ),
                     SizedBox(height: 20,),
