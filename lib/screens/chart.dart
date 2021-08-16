@@ -3,8 +3,10 @@ import 'dart:convert';
 
 import 'package:fcharts/fcharts.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:smartvac/component/title.dart';
+import 'package:smartvac/component/usauge.dart';
 import 'package:smartvac/modal/usauage.dart';
 import 'package:smartvac/services/socket.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -85,7 +87,7 @@ class _ChartState extends State<Chart> {
                            series: <ChartSeries>[
                              ColumnSeries<useage,String>(
                                dataSource:data,
-                               xValueMapper: (useage use,_)=>use.date.toString() + 'h'  ,
+                               xValueMapper: (useage use,_)=>use.date.toString()  ,
                                yValueMapper: (useage use,_)=>use.unit,
                                //width: 0.05,
                       dataLabelSettings: const DataLabelSettings(
@@ -99,8 +101,7 @@ class _ChartState extends State<Chart> {
 
                            ),
                            primaryYAxis: NumericAxis(
-                               axisLine: const AxisLine(width: 0),
-                               labelFormat: '{value}kw',
+                               title: AxisTitle(text:'(kWh)',textStyle:GoogleFonts.poppins(color: Colors.grey[600])),
                                majorTickLines: const MajorTickLines(size: 0)),
                          ),
                        ),
@@ -130,21 +131,22 @@ class _ChartState extends State<Chart> {
        double dunit = element.sum.toDouble();
        var parsedDate = DateTime.parse(element.date);
        if(parsedDate.month == date.month && parsedDate.day ==date.day && parsedDate.year==date.year){
-         for(int i = 0 ; i <= 24;i++){
+         print(parsedDate.hour);
+         for(int i = 0 ; i <= 23;i++){
            print(i);
            if(parsedDate.hour == i){
-             data.add(useage(element.sum.toDouble(), i.toString()));
+             add(useage(element.sum.toDouble(), i.toString()));
+            // data.add(useage(element.sum.toDouble(), i.toString()));
            }else{
-             data.add(useage(0, i.toString()));
+             add(useage(0, i.toString()));
+             //data.add(useage(0, i.toString()));
            }
          }
 
        }
 
      });
-     if(data.length == 1){
 
-     }
 
 
 
@@ -189,6 +191,15 @@ class _ChartState extends State<Chart> {
     }
 
 
+   }
+
+   add(useage use) {
+    int i = int.parse(use.date);
+    if(i <= 11){
+      data.add(useage(use.unit, use.date + 'AM'));
+    }else{
+      data.add(useage(use.unit, use.date+':00' ));
+    }
    }
 
 }

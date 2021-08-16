@@ -26,6 +26,9 @@ Widget mtitle(String s){
 Widget ptitle(String s){
   return  Text(s,style: GoogleFonts.poppins(fontSize: 23,fontWeight: FontWeight.w500,),);
 }
+Widget pptitle(String s){
+  return  Text(s,style: GoogleFonts.poppins(fontSize: 22,fontWeight: FontWeight.w400,),);
+}
 Widget pop(BuildContext context){
   return GestureDetector(
       onTap: (){

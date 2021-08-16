@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:smartvac/component/title.dart';
 import 'package:smartvac/screens/chart.dart';
 import 'package:smartvac/screens/puchase.dart';
+import 'package:smartvac/screens/readings.dart';
 import 'package:smartvac/screens/update.dart';
 Radius r = Radius.circular(10);
 Color c = Color.fromRGBO(255, 255, 255, 1);
@@ -33,7 +34,9 @@ Widget dash(BuildContext context){
               Navigator.push(context, CupertinoPageRoute(builder: (context)=>Update()));
             },Color.fromRGBO(53, 75, 133, 0.77)),
             SizedBox(width: 15,),
-            box('Weekly\nReadings','','pay now',(){},Color.fromRGBO(255, 255, 255, 1)),
+            box('all readings','','pay now',(){
+              Navigator.push(context, CupertinoPageRoute(builder: (context)=>Reading()));
+            },Color.fromRGBO(255, 255, 255, 1)),
           ],
         ),
       ),

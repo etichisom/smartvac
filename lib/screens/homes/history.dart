@@ -21,7 +21,7 @@ class _HistoryState extends State<History> {
          padding: const EdgeInsets.all(8.0),
          child: Column(
            children: [
-            SizedBox(height: 50,),
+            SizedBox(height: 20,),
              Row(
                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                crossAxisAlignment: CrossAxisAlignment.end,
@@ -30,16 +30,7 @@ class _HistoryState extends State<History> {
                  Text('clear history',style: GoogleFonts.poppins(fontSize: 11,),),
                ],
              ),
-             SizedBox(height: 30,),
-             Card(
-               child: TextField(
-                 decoration: InputDecoration(
-                   border: InputBorder.none,
-                   hintText: 'Search',
-                   prefixIcon: Icon(Icons.search)
-                 ),
-               ),
-             ),
+             //SizedBox(height: 30,),
              SizedBox(height: 20,),
              Expanded(
                child:p==null?Center(child: CircularProgressIndicator(),):

@@ -48,7 +48,7 @@ Widget chart (Stream stream1){
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(soc.units.usedUnit.toString() + 'KW',style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 23),),
+                      Text(percent(soc.units).toString() + 'KW',style: GoogleFonts.poppins(fontWeight: FontWeight.bold,fontSize: 23),),
                       Text('out of',style: GoogleFonts.poppins(fontSize: 12)),
                     ],
                   ),
@@ -63,10 +63,8 @@ Widget chart (Stream stream1){
   );
 }
 String percent(Units u) {
-  var k = u.usedUnit/u.totalUnit ;
-  var p = k * 100;
-  print(p);
-  return k.toStringAsFixed(2) + '%';
+  double i = u.usedUnit;
+  return i.toStringAsFixed(4);
 }
 double per(socket soc) {
   var p = soc.units.usedUnit/soc.units.totalUnit ;
